@@ -4,28 +4,29 @@
 	<div class="container">
 	
 		<div id="map" style="width: 600px; height: 400px"></div>
-			<script
-		        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
-		    </script>		    
 		    <script>
 
-			var planes			 				= {{result|safe}} ;
-			console.log(planes)
+				var planes			 				= {{result|safe}} ;
 
-		        var map 						= L.map('map').setView([planes[0][1],planes[0][2]], 30);
-		        mapLink = 
-		            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+		        var map 							= L.map('map').setView([planes[0][1],planes[0][2]], 17);
+		        mapLink 							= '<a href="http://openstreetmap.org">OpenStreetMap</a>';
 		        L.tileLayer(
 		            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		            attribution: '&copy; ' + mapLink + ' Contributors',
 		            maxZoom: 18,
 		            }).addTo(map);
+		        var myIcon = L.icon({
+				    iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/36/Bus_stop_symbol.svg',
+				    iconSize: [38, 95],
+				    iconAnchor: [22, 94],
+				    popupAnchor: [-3, -76]
+				});
+				var markers = L.markerClusterGroup();
 				for (var i = 0; i < planes.length; i++) {
-					marker = new L.marker([planes[i][1],planes[i][2]])
-				.bindPopup(planes[i][0])
-				.addTo(map);
-
+						marker = new L.marker([planes[i][1],planes[i][2]], {icon: myIcon}).bindPopup(planes[i][0]);
+						markers.addLayer(marker);
 					}
+				map.addLayer(markers);
 		               
 		    </script>
 

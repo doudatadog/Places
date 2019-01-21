@@ -15,8 +15,8 @@ def 	compute_nearest(latlons)										:
 		result 															= utils.pandas.concat([stops,result],axis=1).assign(
 
 
-			va 															= lambda DF : DF.arrival<utils.dlim,
-			vd 															= lambda DF : DF.departure<utils.dlim)
+			va 															= lambda DF : True,
+			vd 															= lambda DF : True)
 
 		arrivals   														= result[result.va].sort_values('arrival').head(10)
 
