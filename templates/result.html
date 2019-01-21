@@ -1,0 +1,29 @@
+{%    extends 'layout.html' %}
+
+{%block body %}
+	<div class="container">
+	
+		<div id="map" style="width: 600px; height: 400px"></div>
+		    <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+		    <script>
+
+			var planes			 				= {{result|safe}} ;
+			console.log(planes)
+
+		        var map 						= L.map('map').setView(planes[0], 30);
+		        mapLink = 
+		            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+		        L.tileLayer(
+		            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		            attribution: '&copy; ' + mapLink + ' Contributors',
+		            maxZoom: 18,
+		            }).addTo(map);
+				for (var i = 0; i < planes.length; i++) {
+					marker = new L.marker([planes[i][0],planes[i][1]])
+						.addTo(map);}
+		               
+		    </script>
+
+	</div>   
+	 
+{% endblock %}

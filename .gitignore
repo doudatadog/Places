@@ -1,0 +1,5 @@
+**/logs
+*.h5
+.DS_Store
+*.pyc
+*.ipynb
