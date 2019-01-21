@@ -18,7 +18,7 @@ def 		Processe(dep,arr)						:
 			departures,arrivals						=  nearby_stops.compute_nearest([infos['departure'],infos['arrival']])
 
 			infos['arrival']						=  {'latlon':infos['arrival'],
-														'stops':arrivals.fillna(0).apply(lambda x : [x['stop_lat'],x['stop_lon']],1).tolist()}
+														'stops':arrivals.fillna(0).apply(lambda x : [x['stop_name'],x['stop_lat'],x['stop_lon']],1).tolist()}
 			infos['departure']						=  {'geo':infos['departure'],
 														'stops':departures.fillna(0).apply(lambda x : [x['stop_lat'],x['stop_lon']],1).tolist()}
 			return 										infos	

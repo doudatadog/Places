@@ -15,12 +15,12 @@ def 	compute_nearest(latlons)										:
 		result 															= utils.pandas.concat([stops,result],axis=1).assign(
 
 
-			va 															= lambda DF : DF.arrival<utils.dlim/10.,
-			vd 															= lambda DF : DF.departure<utils.dlim/10.)
+			va 															= lambda DF : DF.arrival<utils.dlim,
+			vd 															= lambda DF : DF.departure<utils.dlim)
 
-		arrivals   														= result[result.va]
+		arrivals   														= result[result.va].sort_values('arrival').head(10)
 
-		departures 														= result[result.vd]
+		departures 														= result[result.vd].sort_values('departure').head(10)
 
 		arrivals['minutes'] 											= arrivals.arrival.apply(utils.Timer)
 		departures['minutes'] 											= departures.departure.apply(utils.Timer)
