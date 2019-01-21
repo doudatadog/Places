@@ -3,4 +3,4 @@
 .DS_Store
 *.pyc
 *.ipynb
-stops.txt
+*.txt
