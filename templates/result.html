@@ -15,14 +15,15 @@
 		            attribution: '&copy; ' + mapLink + ' Contributors',
 		            maxZoom: 18,
 		            }).addTo(map);
-		        var myIcon = L.icon({
-				    iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/36/Bus_stop_symbol.svg',
-				    iconSize: [38, 95],
-				    iconAnchor: [22, 94],
-				    popupAnchor: [-3, -76]
-				});
+		        
 				var markers = L.markerClusterGroup();
 				for (var i = 0; i < planes.length; i++) {
+						var myIcon = new L.icon({
+						    iconUrl: planes[i][3],
+						    iconSize: [38, 95],
+						    iconAnchor: [22, 94],
+						    popupAnchor: [-3, -76]
+						});
 						marker = new L.marker([planes[i][1],planes[i][2]], {icon: myIcon}).bindPopup(planes[i][0]);
 						markers.addLayer(marker);
 					}

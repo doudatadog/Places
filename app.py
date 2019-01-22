@@ -8,9 +8,10 @@ app                         = Flask(__name__)
 def home()                  : return render_template('home.html')
 
 @app.route('/geocode',methods=['POST'])
+
 def geocode()               :
 	dep,arr                 = request.form.values()
-	result                  = geocode_stops.Processe(dep,arr)
+	result                  = geocode_stops.Process(dep,arr)
 	return                    render_template('result.html',result=result['arrival']['stops'])
 
 
