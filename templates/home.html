@@ -1,15 +1,5 @@
 {% 	extends 'layout.html' %}
 
 {%block body %}
-		<div class ='container' id = 'home'>
-			<h1>Tell us about your project</h1>
-							  <!-- The form -->
-				<form class="example" action="/geocode" method = "POST">
-		        		<p>Work address <input type = "text" name = "work" /></p>
-		        		<p>Home address <input type = "text" name = "home" /></p>
-		        		<p><input type = "submit" value = "submit" /></p>
-				</form>			
-		</div>
-
-		
+	{%include 'includes/home_template.html' %}
 {% endblock %}

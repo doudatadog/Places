@@ -5,14 +5,15 @@ app                         = Flask(__name__)
 
 
 @app.route('/')
-def home()                  : return render_template('home.html')
+def home()                  : 
+	return render_template('home.html')
 
 @app.route('/geocode',methods=['POST'])
 
 def geocode()               :
 	dep,arr                 = request.form.values()
 	result                  = geocode_stops.Process(dep,arr)
-	return                    render_template('result.html',result=result['arrival']['stops'])
+	return                    render_template('result.html',result=result['arrival']['stops'],home=result['arrival']['latlon'])
 
 
 

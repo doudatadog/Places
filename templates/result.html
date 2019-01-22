@@ -3,7 +3,8 @@
 {%block body %}
 	<div class="container">
 	
-		<div id="map" style="width: 600px; height: 400px"></div>
+		<div id="map" style="width: 600px; height: 400px;float: left;"></div>
+		<div id='home' style="float: left;" >{%include 'includes/home_template.html' %}</div>
 			<style type="text/css">/* css to customize Leaflet default styles  */
 				.leaflet-popup-content-wrapper, .leaflet-popup-tip{
 					background: white;
@@ -16,8 +17,17 @@
 		    <script>
 
 				var planes			 				= {{result|safe}} ;
+				var home			 				= {{home|safe}} ;
 
-		        var map 							= L.map('map').setView([planes[0][1],planes[0][2]], 18);
+		        var map 							= L.map('map').setView([home[1][0],home[1][1]], 18);
+		        var HIcon 							= new L.icon({
+						    iconUrl: '/static/img/home.png',
+						    iconSize: [35, 45],
+						    iconAnchor: [22, 94],
+						    popupAnchor: [-3, -76]
+						});
+						L.marker([home[1][0],home[1][1]], {icon: HIcon}).bindPopup(home[0][0])
+						.addTo(map);
 		        mapLink 							= '<a href="http://openstreetmap.org">OpenStreetMap</a>';
 		        L.tileLayer(
 		            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
