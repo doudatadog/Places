@@ -4,23 +4,31 @@
 	<div class="container">
 	
 		<div id="map" style="width: 600px; height: 400px"></div>
+			<style type="text/css">/* css to customize Leaflet default styles  */
+				.leaflet-popup-content-wrapper, .leaflet-popup-tip{
+					background: white;
+					width: 300px;
+					height: 300px;
+					font-family: "Times New Roman", Times, serif;
+					font-size: 14px;
+					}
+			</style>
 		    <script>
 
 				var planes			 				= {{result|safe}} ;
 
-		        var map 							= L.map('map').setView([planes[0][1],planes[0][2]], 17);
+		        var map 							= L.map('map').setView([planes[0][1],planes[0][2]], 18);
 		        mapLink 							= '<a href="http://openstreetmap.org">OpenStreetMap</a>';
 		        L.tileLayer(
 		            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		            attribution: '&copy; ' + mapLink + ' Contributors',
 		            maxZoom: 18,
 		            }).addTo(map);
-		        
 				var markers = L.markerClusterGroup();
 				for (var i = 0; i < planes.length; i++) {
 						var myIcon = new L.icon({
 						    iconUrl: planes[i][3],
-						    iconSize: [38, 95],
+						    iconSize: [30, 40],
 						    iconAnchor: [22, 94],
 						    popupAnchor: [-3, -76]
 						});
