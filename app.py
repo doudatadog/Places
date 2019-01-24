@@ -13,7 +13,10 @@ def home()                  :
 def geocode()               :
 	dep,arr                 = request.form.values()
 	result                  = geocode_stops.Process(dep,arr)
-	return                    render_template('result.html',result=result['arrival']['stops'],home=result['arrival']['latlon'])
+	return                    render_template('result.html',
+					 result=result['departure']['stops'],
+					   home=result['departure']['latlon'],
+					   work=result['arrival']['latlon'])
 
 
 

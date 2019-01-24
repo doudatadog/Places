@@ -1,5 +1,4 @@
 import utils,nearby_stops
-apikey                          = '95180978743a4a4a843f2a47647bd4ae'
 
 def 		Process(dep,arr)	:
 			
