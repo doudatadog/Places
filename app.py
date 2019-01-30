@@ -1,5 +1,5 @@
 from   flask                import request,Flask, render_template
-from static.Stops           import geocode_stops
+from static.api             import geocode_stops
 
 app                         = Flask(__name__)
 

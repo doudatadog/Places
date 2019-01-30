@@ -9,7 +9,6 @@
 
 				var planes			 				= {{result|safe}} ;
 				var home			 				= {{home|safe}} ;
-				var work			 				= {{work|safe}} ;
 
 		        var map 							= L.map('map').setView([home[1][0],home[1][1]], 18);
 		        var HIcon 							= new L.icon({
@@ -20,14 +19,7 @@
 						});
 						L.marker([home[1][0],home[1][1]], {icon: HIcon}).bindPopup(home[0][0])
 						.addTo(map);
-				var WIcon 							= new L.icon({
-						    iconUrl: '/static/img/work.png',
-						    iconSize: [35, 45],
-						    iconAnchor: [22, 94],
-						    popupAnchor: [-3, -76]
-						});
-						L.marker([work[1][0],work[1][1]], {icon: WIcon}).bindPopup(work[0][0])
-						.addTo(map);
+
 		        mapLink 							= '<a href="http://openstreetmap.org">OpenStreetMap</a>';
 		        L.tileLayer(
 		            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
