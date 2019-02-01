@@ -1,8 +1,0 @@
-#mapid { height: 180px; }
-
-#button__{ 
-position: absolute;
-}
-.leaflet-popup-content-wrapper, .leaflet-popup-tip{
-	overflow:auto;
-}

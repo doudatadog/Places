@@ -11,22 +11,18 @@
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script scr="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
-
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin="" />
-	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js" integrity="sha512-WXoSHqw/t26DszhdMhOXOkI7qCiv5QWXhH9R7CgvgZMHz1ImlkVQ3uNsiQKu5wwbbxtPzFXd1hK4tzno2VqhpA==" crossorigin=""></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="static/node_modules/leaflet.markercluster/dist/screen.css" />
+	<link rel="stylesheet" href="./static/js/leaflet/leaflet.css" />
+	<link rel="stylesheet" href="./static/css/mapstyle.css" />
+	<script src="./static/js/leaflet/leaflet.js"></script>
+	<link rel="stylesheet" href="./static/js/leaflet-control-geocoder-1.6.0/dist/Control.Geocoder.css" />
+	<script src="./static/js/leaflet-control-geocoder-1.6.0/dist/Control.Geocoder.js"></script>
 	<link rel="stylesheet" href="static/node_modules/leaflet.markercluster/dist/MarkerCluster.css" />
 	<link rel="stylesheet" href="static/node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css" />
 	<script src="static/node_modules/leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-	<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 </head>
 <body>
 	{% include 'includes/nav_bar.html' %}
-	<div class="container" id = 'banner'>
 		{% block body %}
 		{% endblock %}
-	</div>
 </body>
 </html>

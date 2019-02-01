@@ -1,10 +1,12 @@
 {%    extends 'layout.html' %}
 
 {%block body %}
-	<div class="container">
+	<div class="container" id ="resultcont">
 	
-		<div id="map" style="width: 600px; height: 400px;float: right;"></div>
-		<div id='home' style="float: left;" >{%include 'includes/home_template.html' %}</div>
+		<div id="map" class="streemap" ></div>
+		<div id='homemap' >
+		{%include 'includes/home_template.html' %}
+		</div>
 		    <script>
 
 				var planes			 				= {{result|safe}} ;

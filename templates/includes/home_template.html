@@ -1,9 +1,25 @@
-		<div class ='container' id = 'home'>
+		<div class ='container' id = 'hometemp'>
 							  <!-- The form -->
-				<form id ='my_form' class="example" action="/geocode" method = "POST">
-						<h2> Fill in your addresses ! </h2>
-		        		<p>Home address  <input type = "text" name = "home" /></p>
-		        		<p>Work address  <input type = "text" name = "work" /></p>
-		        		<p id='button__'><input  type = "submit" value = "submit" /></p>
-				</form>			
+				<form id ='my_form' action="/geocode" method = "POST">
+					  <div class="row">
+					    <div class="col-25">
+					      <label for="fname"> Home Address </label>
+					    </div>
+					    <div class="col-75">
+					      <input type="text" id="fname" name="homeadress" placeholder="Home..">
+					    </div>
+					  </div>
+					  <div class="row">
+					    <div class="col-25">
+					      <label for="lname">Work Address </label>
+					    </div>
+					    <div class="col-75">
+					      <input type="text" id="lname" name="workAddress" placeholder="Work Address..">
+					    </div>
+					  </div>
+					  <div class="row">
+					    <input type="submit" value="Submit">
+					  </div>
+				</form>		
+
 		</div>

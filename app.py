@@ -11,9 +11,9 @@ def home()                  :
 @app.route('/geocode',methods=['POST'])
 
 def geocode()               :
-	dep,arr                 = request.form.values()
-	result                  = geocode_stops.Process(dep,arr)
-	return                    render_template('result.html',
+	spot                    = request.form.values()
+	result                  = geocode_stops.Process(spot)
+	return                    render_template('index.html',
 					 result=result['departure']['stops'],
 					   home=result['departure']['latlon'],
 					   work=result['arrival']['latlon'])
